@@ -38,9 +38,9 @@ function getBranches() {
   req.send();
 }
 
-function displayCommits() {
-  const commits = JSON.parse(this.responseText);
-  const commitsList = `<ul>${commits.map(commit => '<li><strong>' + commit.commit.committer.name + '</strong> - ' + commit.author.login +' - ' + commit.commit.message + '</li>').join('')}</ul>`;
+function displayBranches() {
+  const branches = JSON.parse(this.responseText);
+  const branchesList = `<ul>${branches.map(commit => '<li><strong>' + commit.commit.committer.name + '</strong> - ' + commit.author.login +' - ' + commit.commit.message + '</li>').join('')}</ul>`;
   document.getElementById('details').innerHTML = commitsList;
 }
 
