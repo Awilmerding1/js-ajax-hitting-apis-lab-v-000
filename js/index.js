@@ -38,6 +38,11 @@ function getBranches() {
   req.send();
 }
 
+function displayCommits() {
+  const commits = JSON.parse(this.responseText);
+  const commitsList = `<ul>${commits.map(commit => '<li><strong>' + commit.commit.committer.name + '</strong> - ' + commit.author.login +' - ' + commit.commit.message + '</li>').join('')}</ul>`;
+  document.getElementById('details').innerHTML = commitsList;
+}
 
 
 
