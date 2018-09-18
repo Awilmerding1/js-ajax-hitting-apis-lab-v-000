@@ -40,7 +40,7 @@ function getBranches() {
 
 function displayBranches() {
   const branches = JSON.parse(this.responseText);
-  const branchesList = `<ul>${branches.map(commit => '<li><strong>' + commit.commit.committer.name + '</strong> - ' + commit.author.login +' - ' + commit.commit.message + '</li>').join('')}</ul>`;
+  const branchesList = `<ul>${branches.map(commit => '<li><strong>' + branch.branch.name + '</strong></li>').join('')}</ul>`;
   document.getElementById('details').innerHTML = commitsList;
 }
 
